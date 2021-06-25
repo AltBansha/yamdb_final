@@ -80,7 +80,7 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
-if 'test' in sys.argv or 'test\_coverage' in sys.argv:
+if 'test' in sys.argv or 'test.coverage' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
     DATABASES['default']['NAME'] = ':memory:'
 
