@@ -1,5 +1,7 @@
 # YaMDb API
 
+![Status badge](https://github.com/AltBansha/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 ### Описание
 Проект **YaMDb** позволяет собирать отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 
@@ -30,5 +32,3 @@ docker-compose exec web python manage.py loaddata fixtures.json
 
 #### Создание суперпользователя:
 - docker-compose exec web python manage.py createsuperuser
-
-![Status badge](https://github.com/AltBansha/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
