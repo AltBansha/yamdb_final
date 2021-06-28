@@ -1,5 +1,4 @@
 import os
-import sys
 from datetime import timedelta
 from dotenv import load_dotenv
 load_dotenv()
@@ -18,7 +17,7 @@ SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost',
+    '*',
 ]
 
 
@@ -74,7 +73,7 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.postgresql'),
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
@@ -82,9 +81,7 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
-if 'test' in sys.argv or 'test.coverage' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-    DATABASES['default']['NAME'] = ':memory:'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
