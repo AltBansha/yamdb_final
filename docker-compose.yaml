@@ -4,7 +4,7 @@
     db: 
       env_file: 
         - ./.env
-      image: postgres:12.4
+      image: postgres:latest
       volumes: 
         - "postgres_data:/var/lib/postgresql/data/"
     nginx: 
