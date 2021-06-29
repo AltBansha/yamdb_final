@@ -2,6 +2,8 @@
 
 ![Status badge](https://github.com/AltBansha/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+### Сайт: http://84.252.138.10/api/v1/
+
 ### Описание
 Проект **YaMDb** позволяет собирать отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 
