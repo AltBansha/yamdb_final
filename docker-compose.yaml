@@ -3,30 +3,30 @@
   services: 
     db: 
       env_file: 
-        - ./.env
+        - .env
       image: postgres:latest
       volumes: 
-        - "postgres_data:/var/lib/postgresql/data/"
+        - postgres_data:/var/lib/postgresql/data/
     nginx: 
       depends_on: 
         - web
-      image: "nginx:1.19.3"
+      image: nginx:1.19.3
       ports: 
-        - "80:80"
+        - 80:80
       volumes: 
-        - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
-        - "static_value:/var/html/static/"
-        - "media_value:/var/html/media/"
+        - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        - static_value:/var/html/static/
+        - media_value:/var/html/media/
     web: 
       image: dockerfirst1/yamdb_final:latest
       depends_on: 
         - db
       env_file: 
-        - ./.env
+        - .env
       restart: always
       volumes: 
-        - "static_value:/code/static/"
-        - "media_value:/code/media/"
+        - static_value:/code/static/
+        - media_value:/code/media/
   
   volumes: 
     media_value: 
